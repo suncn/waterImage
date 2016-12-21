@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+	    * {
+	        padding: 0;
+	        margin: 0;
+	    }
+	    
+	    .image-list {
+	        position: relative;
+	    }
+	    
+	    .image-box {
+	        padding: 10px;
+	        position: absolute;
+	    }
+    </style>
+
+    <script type="text/javascript">
+	    window.onload = function() {
+
+			const imageBoxes = document.getElementById("image-box-container").children,
+			offsetWidth      = imageBoxes[0].offsetWidth,
+			offsetHeight     = imageBoxes[0].offsetHeight,
+			colArray         = new Array(Math.floor(document.body.clientWidth / offsetWidth)),
+			imageBoxesLength = imageBoxes.length;
+
+	        for (let i = 0; i < imageBoxesLength ; i++) {
+	         	if(i < colArray.length){
+					colArray[i]              = imageBoxes[i].offsetHeight;
+					imageBoxes[i].style.left = offsetWidth * i + "px";
+					imageBoxes[i].style.top  = 0;
+	         	}else{
+					let minHeight            = Math.min.apply({}, colArray),
+					minIndex                 = getMinIndex(colArray, minHeight),
+					minLeft                  = imageBoxes[minIndex].offsetLeft;
+					
+					// 重置最小的列高度
+					colArray[minIndex]       = minHeight + imageBoxes[i].offsetHeight;
+					
+					// 设置当前图片高度
+					imageBoxes[i].style.left = minLeft + "px";
+					imageBoxes[i].style.top  = minHeight + "px";
+	         	}
+	        } 
+	    }
+
+	    // ie8 不支持indexOf 获取数组中最小元素的索引 
+        function getMinIndex(arr,min){  
+            for(var index in arr){  
+                if(arr[index] == min){  
+                    return index;  
+                }  
+            }  
+        }  
+    </script>
+</head>
+
+<body>
+    <div id="image-box-container" class="image-list">
+       
+<div class="image-box"><div class="image"><img src="http://goss1.asiacn.vcg.com/creative/vcg/500-nowater/19924000/gic19924471.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss4.asiacn.vcg.com/creative/vcg/500-nowater/12190000/504687171.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss2.asiacn.vcg.com/creative/vcg/500-nowater/19924000/gic19924483.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss2.asiacn.vcg.com/creative/vcg/500-nowater/12480000/524813409.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss4.asiacn.vcg.com/creative/vcg/500-nowater/12431000/525687837.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss2.asiacn.vcg.com/creative/vcg/500-nowater/12461000/530677009.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss4.asiacn.vcg.com/creative/vcg/500-nowater/8417000/147851082.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss3.asiacn.vcg.com/creative/vcg/500-nowater/12192000/77746408.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss3.asiacn.vcg.com/creative/vcg/500-nowater/19924000/gic19924488.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss1.asiacn.vcg.com/creative/vcg/500-nowater/12479000/523836143.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss4.asiacn.vcg.com/creative/vcg/500-nowater/12176000/504681645.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss4.asiacn.vcg.com/creative/vcg/500-nowater/19924000/gic19924496.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss1.asiacn.vcg.com/creative/vcg/500-nowater/12421000/527577129.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss4.asiacn.vcg.com/creative/vcg/500-nowater/11467000/489095993.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss4.asiacn.vcg.com/creative/vcg/500-nowater/12172000/471286907.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss3.asiacn.vcg.com/creative/vcg/500-nowater/19924000/gic19924492.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss1.asiacn.vcg.com/creative/vcg/500-nowater/12172000/503118641.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss2.asiacn.vcg.com/creative/vcg/500-nowater/19924000/gic19924487.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss4.asiacn.vcg.com/creative/vcg/500-nowater/12400000/529794169.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss1.asiacn.vcg.com/creative/vcg/500-nowater/12472000/524813357.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss4.asiacn.vcg.com/creative/vcg/500-nowater/12170000/503787343.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss2.asiacn.vcg.com/creative/vcg/500-nowater/12460000/521815407.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss4.asiacn.vcg.com/creative/vcg/500-nowater/12454000/526295565.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss3.asiacn.vcg.com/creative/vcg/500-nowater/12460000/525387501.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss2.asiacn.vcg.com/creative/vcg/500-nowater/11838000/479632665.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss3.asiacn.vcg.com/creative/vcg/500-nowater/12392000/527577177.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss2.asiacn.vcg.com/creative/vcg/500-nowater/10749000/170535552.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss4.asiacn.vcg.com/creative/vcg/500-nowater/4390000/82126857.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss2.asiacn.vcg.com/creative/vcg/500-nowater/12009000/508488545.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss4.asiacn.vcg.com/creative/vcg/500-nowater/12167000/501801159.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss1.asiacn.vcg.com/creative/vcg/500-nowater/19924000/gic19924497.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss3.asiacn.vcg.com/creative/vcg/500-nowater/12323000/518792545.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss3.asiacn.vcg.com/creative/vcg/500-nowater/12456000/528913607.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss2.asiacn.vcg.com/creative/vcg/500-nowater/12190000/77748139.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss2.asiacn.vcg.com/creative/vcg/500-nowater/4701000/200473625-001.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss1.asiacn.vcg.com/creative/vcg/500-nowater/12442000/521979821.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss1.asiacn.vcg.com/creative/vcg/500-nowater/11819000/482913151.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss3.asiacn.vcg.com/creative/vcg/500-nowater/10046000/126165079.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss3.asiacn.vcg.com/creative/vcg/500-nowater/12171000/513087917.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss3.asiacn.vcg.com/creative/vcg/500-nowater/12443000/523835697.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss4.asiacn.vcg.com/creative/vcg/500-nowater/19924000/gic19924494.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss4.asiacn.vcg.com/creative/vcg/500-nowater/12147000/513423355.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss2.asiacn.vcg.com/creative/vcg/500-nowater/12454000/528904411.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss1.asiacn.vcg.com/creative/vcg/500-nowater/4390000/82126806.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss4.asiacn.vcg.com/creative/vcg/500-nowater/9418000/127068240.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss3.asiacn.vcg.com/creative/vcg/500-nowater/2693000/sb10066485g-002.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss2.asiacn.vcg.com/creative/vcg/500-nowater/12491000/525441023.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss4.asiacn.vcg.com/creative/vcg/500-nowater/12184000/505322127.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss3.asiacn.vcg.com/creative/vcg/500-nowater/12163000/515803361.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss2.asiacn.vcg.com/creative/vcg/500-nowater/12396000/521981687.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss1.asiacn.vcg.com/creative/vcg/500-nowater/11806000/482911729.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss2.asiacn.vcg.com/creative/vcg/500-nowater/12169000/513087277.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss1.asiacn.vcg.com/creative/vcg/500-nowater/10032000/126157385.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss4.asiacn.vcg.com/creative/vcg/500-nowater/12137000/505320011.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss4.asiacn.vcg.com/creative/vcg/500-nowater/11808000/487760841.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss4.asiacn.vcg.com/creative/vcg/500-nowater/4742000/80668483.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss2.asiacn.vcg.com/creative/vcg/500-nowater/12187000/511582513.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss1.asiacn.vcg.com/creative/vcg/500-nowater/12486000/525445839.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss3.asiacn.vcg.com/creative/vcg/500-nowater/4429000/79194000.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss3.asiacn.vcg.com/creative/vcg/500-nowater/12150000/471909309.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss2.asiacn.vcg.com/creative/vcg/500-nowater/12141000/502438835.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss4.asiacn.vcg.com/creative/vcg/500-nowater/4390000/82126865.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss2.asiacn.vcg.com/creative/vcg/500-nowater/12144000/471897769.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss2.asiacn.vcg.com/creative/vcg/500-nowater/12450000/524813417.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss3.asiacn.vcg.com/creative/vcg/500-nowater/2661000/sb10065795p-001.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss1.asiacn.vcg.com/creative/vcg/500-nowater/12096000/513423411.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss1.asiacn.vcg.com/creative/vcg/500-nowater/12327000/523835687.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss2.asiacn.vcg.com/creative/vcg/500-nowater/12136000/471934837.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss3.asiacn.vcg.com/creative/vcg/500-nowater/12187000/77746615.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss4.asiacn.vcg.com/creative/vcg/500-nowater/12074000/515040595.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss1.asiacn.vcg.com/creative/vcg/500-nowater/12304000/523835721.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss4.asiacn.vcg.com/creative/vcg/500-nowater/11985000/513423489.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss4.asiacn.vcg.com/creative/vcg/500-nowater/9994000/126162598.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss1.asiacn.vcg.com/creative/vcg/500-nowater/12079000/505319991.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss2.asiacn.vcg.com/creative/vcg/500-nowater/4306000/81876748.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss3.asiacn.vcg.com/creative/vcg/500-nowater/12486000/525445975.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss1.asiacn.vcg.com/creative/vcg/500-nowater/12424000/518518431.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss2.asiacn.vcg.com/creative/vcg/500-nowater/19924000/gic19924500.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss3.asiacn.vcg.com/creative/vcg/500-nowater/12484000/521811531.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss1.asiacn.vcg.com/creative/vcg/500-nowater/4390000/82126848.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss2.asiacn.vcg.com/creative/vcg/500-nowater/11421000/483635147.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss2.asiacn.vcg.com/creative/vcg/500-nowater/4429000/79194091.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss2.asiacn.vcg.com/creative/vcg/500-nowater/4742000/80667799.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss3.asiacn.vcg.com/creative/vcg/500-nowater/12149000/513087461.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss1.asiacn.vcg.com/creative/vcg/500-nowater/12108000/515791697.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss3.asiacn.vcg.com/creative/vcg/500-nowater/12383000/525389703.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss2.asiacn.vcg.com/creative/vcg/500-nowater/5306000/79248215.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss3.asiacn.vcg.com/creative/vcg/500-nowater/11671000/487761017.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss2.asiacn.vcg.com/creative/vcg/500-nowater/6948000/138622418.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss1.asiacn.vcg.com/creative/vcg/500-nowater/9412000/140505174.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss2.asiacn.vcg.com/creative/vcg/500-nowater/12116000/499421279.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss3.asiacn.vcg.com/creative/vcg/500-nowater/12185000/77746415.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss1.asiacn.vcg.com/creative/vcg/500-nowater/12066000/511582597.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss1.asiacn.vcg.com/creative/vcg/500-nowater/12163000/512366407.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss2.asiacn.vcg.com/creative/vcg/500-nowater/11980000/513423493.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss1.asiacn.vcg.com/creative/vcg/500-nowater/9283000/140664549.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss4.asiacn.vcg.com/creative/vcg/500-nowater/12043000/505320603.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss2.asiacn.vcg.com/creative/vcg/500-nowater/12404000/525445319.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss1.asiacn.vcg.com/creative/vcg/500-nowater/12372000/524813329.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss1.asiacn.vcg.com/creative/vcg/500-nowater/19924000/gic19924502.jpg"  width="200px" height="auto" /></div></div>
+<div class="image-box"><div class="image"><img src="http://goss.asiacn.vcg.com/static/img/search-nextpage.png"  width="200px" height="auto" /></div></div>
+    </div>
+</body>
+
+</html>
